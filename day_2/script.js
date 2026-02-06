@@ -64,7 +64,6 @@ function checkVowel(char) {
 
 console.log(checkVowel("a"))
 
-
 // 5 Leap year
 
 function checkLeapYear(year) {
