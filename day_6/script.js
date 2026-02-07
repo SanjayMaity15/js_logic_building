@@ -69,7 +69,7 @@ console.log(sum === n ? "Perfect" : "not")
 
 // Second highest GCD
 
-let num1 = 12, num2 = 24
+let num1 = 7, num2 = 8
 
 let minn = Math.max(num1, num2)
 let gcd = 1
