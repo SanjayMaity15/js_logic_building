@@ -104,3 +104,113 @@ function nonRepeatChar(str) {
 }
 
 console.log(nonRepeatChar("banabnaiikhhkpp"))
+
+
+// Remove all duplicate characters keep first occurence
+
+// input: "programming"
+// output : progamin
+
+
+
+function removeDuplicatesChar(str) {
+    
+    let output = ""
+    for (let char of str) {
+        if (!output.includes(char))
+            output = output + char
+    }
+
+    return output
+}
+
+console.log(removeDuplicatesChar("programming"))
+
+// Reverse only word in a sentence
+
+// input: I love coding
+// output : coding love i
+
+function reverseOnlyWord(str) {
+    
+    strArray = str.split(" ");
+    reverseStr = ""
+    for (let i = strArray.length - 1 ; i >= 0; i--){
+        reverseStr = reverseStr + `${strArray[i]} `
+    }
+
+    return reverseStr
+
+}
+
+console.log(reverseOnlyWord("I love coding"))
+
+
+// Find longest word in a sentence
+
+function findLogestWord(str) {
+    let longWord = ""
+    let longWordLength = 0;
+    let strArray = str.split(" ")
+
+    for (let word of strArray) {
+        if (word.length > longWordLength) {
+            longWord = word
+            longWordLength = word.length
+        }
+    }
+    
+    return {longWord, longWordLength}
+
+}
+
+console.log(findLogestWord("I am a good boy"))
+
+// Count the number of word in sentence
+
+function countNumberOfWordInSentence(str) {
+    const strArray = str.split(/\W/)
+    
+    return strArray.length
+}
+
+console.log(countNumberOfWordInSentence("I am a software engineer"))
+
+// Find all substring of a string
+
+// input = abc
+// output : a, ab , abc, b, bc, c
+
+
+function findSubstring(str) {
+    const subStr = [];
+
+    for (let i = 0; i < str.length; i++){
+        for (let j = i + 1; j <= str.length; j++){
+            subStr.push(str.slice(i, j))
+        }
+    }
+
+    return subStr
+}
+
+console.log(findSubstring("abc"))
+
+
+// Compress a string
+// input: aaabbccccd
+// output: a3b2c4d1
+
+
+function compressString(str) {
+    const frequency = {}
+    
+    for (let char of str) {
+        frequency[char] = (frequency[char] || 0) + 1
+    }
+
+    let ans = Object.entries(frequency).flat(1).join("")
+    return ans
+}
+
+console.log(compressString("aaabbccccd"))
